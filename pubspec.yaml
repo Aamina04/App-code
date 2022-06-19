@@ -21,7 +21,7 @@ dependencies:
   fluid_kit: any
   geolocator: ^8.2.0
   permission_handler: any
-  location: ^4.2.0
+  location: ^4.4.0
   provider: any
   flutter_spinkit: ^5.1.0
   marker_icon: ^0.7.1

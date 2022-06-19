@@ -98,13 +98,13 @@ class _LoginPageState extends State<LoginPage> {
                           TextFormField(
                             obscureText: isSecure,
                             controller: passwordController,
-                            validator: (value) {
-                              // Password Leng must be greater than 6 chacractor
-                              if (value == null || value.length <= 6) {
-                                return 'Password Very Week';
-                              }
-                              return null;
-                            },
+                            // validator: (value) {
+                            //   // Password Leng must be greater than 6 chacractor
+                            //   if (value == null || value.length <= 6) {
+                            //     return 'Password Very Week';
+                            //   }
+                            //   return null;
+                            // },
                             decoration: InputDecoration(
                               labelText: "Enter Password",
                               enabledBorder: border,
@@ -155,20 +155,22 @@ class _LoginPageState extends State<LoginPage> {
                           MyButton(
                               title: "Log In",
                               onPressed: () {
+                                print('login pressed');
                                 if (formKey.currentState!.validate()) {
                                   authState.handleLogin(
                                       email: emailController.text.trim(),
                                       password: passwordController.text.trim());
-                                  Get.snackbar(
-                                    "Login",
-                                    "Successfully Login ",
-                                    backgroundColor: Colors.white,
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    margin: const EdgeInsets.only(bottom: 10),
-                                    borderRadius: 6,
-                                  );
+                                  // Get.snackbar(
+                                  //   "Login",
+                                  //   "Successfully Login ",
+                                  //   backgroundColor: Colors.white,
+                                  //   snackPosition: SnackPosition.BOTTOM,
+                                  //   margin: const EdgeInsets.only(bottom: 10),
+                                  //   borderRadius: 6,
+                                  // );
                                   final route = MaterialPageRoute(
                                       builder: (context) => const MyHomePage());
+                                  print('opening home page');
                                   Navigator.push(context, route);
                                 }
                               }),
